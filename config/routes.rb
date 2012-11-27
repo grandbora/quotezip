@@ -1,5 +1,9 @@
 Repo::Application.routes.draw do
+  resources :quotes
+
+
   get "home/index"
+  post "home/save"
 
   root :to => "home#index"
 
