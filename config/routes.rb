@@ -1,10 +1,7 @@
 Repo::Application.routes.draw do
   resources :quotes
 
-
-  get "home/index"
-  post "home/save"
-
+  post "save" => "home#save"
   root :to => "home#index"
 
   # The priority is based upon order of creation:
