@@ -1,19 +1,23 @@
-put your quote
-<%= form_tag({ :action => :save }, { :method => :post }) do %>
-
-	content : <%= text_field "quote", "content", :size => 1500 %>
-	book : <%= text_field "quote", "book", :size => 500 %>
-	<%= submit_tag("Post") %>
-
-<% end %>
-
-
-Existing quotes
-
-
-<% @quotes.each do |quote| %>
-  <div>
-	  <div><%= quote.content %></div>
-	  <div><%= quote.book %></div>
-  </div>
-<% end %>
+<div class="create left">
+	<div class="header">Enter your own</div>
+	
+	<%= form_tag({ :action => :save }, { :method => :post }) do %>
+		<div><%= text_area "quote", "content", :rows => 5, :class => "content" %></div>
+		<div class="book">
+			<span>from the book</span> <%= text_field "quote", "book", :size => 500, :class => "book" %>
+		</div>
+		<div class="submit">
+			<%= submit_tag("Post") %>
+		</div>
+	<% end %>
+</div>
+<div class="list">
+  <ul>
+	<% @quotes.each do |quote| %>
+	  	<li>
+		  <div class='content'><%= quote.content %></div>
+		  <div class='book'><%= quote.book %></div>
+	  	</li>
+	<% end %>
+  </ul>
+</div>
