@@ -11,6 +11,13 @@ del 					{text-decoration: line-through;}
 table 					{border-collapse: collapse;	border-spacing: 0;}
 body					{font-family:Arial, Helvetica, sans-serif;}
 
+html,body {
+	height: 100%;
+	font-family: Book Antiqua;
+	font-size:16px;
+	color:#030366;
+}
+
 .hidden {
 	display: none;
 }
@@ -32,14 +39,8 @@ body					{font-family:Arial, Helvetica, sans-serif;}
 	padding: 0px;
 }
 
-html,body {
-	height: 100%;
-	font-family: Book Antiqua;
-	font-size:16px;
-	color:#030366;
-}
 
-div.top {
+.top {
 	background: #848383;
 	padding:0px 10px 5px;
 	color:#3366cc;
@@ -49,7 +50,35 @@ div.top {
 	font-size: 30px;
 }
 
-div.top .beta{
+.top .topBar  {
+	margin-left: 90%;
+	font-size: 25px;
+}
+
+.top .topBar ul{
+}
+
+.top .topBar ul li	{
+	float:left;
+	padding:0px;
+	border-top:solid 2px #bad3ea;	
+}
+.top .topBar ul li.active{
+	border-top: solid 3px #1a54e1;
+	color:#363636;
+	font-weight:bold;
+}
+.top .topBar ul li:hover	{
+	background:#e4ebf8;
+	cursor:pointer;
+}
+
+.top a{
+	color:inherit;
+	text-decoration:none;
+}
+
+.top .beta{
 	font-size: 12px;
 }
 
@@ -76,14 +105,17 @@ div.create .submit{
 
 div.list {
 	padding: 10px;
+	padding-right: 0px;
 	margin: 10px;
 	margin-left: 380px;
+	margin-right: 0px;
 }
 
 div.list ul li {
 	list-style-type: disc; 
 	padding-top: 4px;
 	padding-bottom: 1px;
+	padding-right: 10px;
 }
 
 div.list ul li:nth-child(odd) {
@@ -95,3 +127,30 @@ div.list ul li .book{
 	font-style: italic;
 	color: #A0A0C0;
 } 
+
+.content .about{
+	padding: 15px;
+	font-size: 19px;
+}
+
+.content .about h2{
+	padding: 5px;
+}
+
+.content .about span{
+	color:#3366cc;
+}
+
+.content .about ul{
+	margin-left: 25px;
+}
+
+.content .about ul li{
+	padding: 3px;
+	list-style: disc;
+	font-style: italic;
+}
+
+.content .about p{
+	padding: 5px;
+}

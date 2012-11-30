@@ -1,8 +1,12 @@
 Repo::Application.routes.draw do
   resources :quotes
 
-  post "save" => "home#save"
   root :to => "home#index"
+  post "save" => "home#save"
+
+  get "about" => "static#about"
+
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
