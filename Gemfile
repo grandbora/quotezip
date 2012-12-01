@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'rails', '3.2.9'
 
@@ -8,6 +9,8 @@ end
 
 group :development, :test do
   gem 'mysql2'
+  gem 'mysql'
+  gem 'taps'
 end
 
 # group :assets do
