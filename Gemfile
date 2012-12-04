@@ -11,6 +11,7 @@ group :development, :test do
   gem 'mysql'
   gem 'sqlite3'
   gem 'taps'
+  gem 'nokogiri'
 end
 
 # group :assets do

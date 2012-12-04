@@ -1,0 +1,35 @@
+require 'nokogiri'
+require 'open-uri'
+
+
+for page in 1..101
+
+	doc = Nokogiri::HTML(open('http://www.goodreads.com/quotes?page=' + page.to_s))
+
+	puts 'PAGE ::::::::' + page.to_s
+
+	doc.css('div.quotes div.quote div.quoteText').each do |quoteDiv|
+
+		elements = quoteDiv.children
+	
+		unless elements.at_css 'i a'
+			next
+		end
+
+		content = elements[0].text.gsub(/[(\u201C)(\u201D)(\n)]/, '').strip
+		puts content.inspect
+
+		author = elements.css('a').children[0].text
+		puts author.inspect
+
+		book = elements.css('i a').children[0].text
+		puts book.inspect
+
+		puts '-----------------------------'
+
+		if elements.css('br').size > 1
+			exit
+		end
+
+	end
+end

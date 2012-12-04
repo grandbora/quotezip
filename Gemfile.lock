@@ -43,6 +43,7 @@ GEM
     multi_json (1.4.0)
     mysql (2.9.0)
     mysql2 (0.3.11)
+    nokogiri (1.5.5)
     pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -99,6 +100,7 @@ PLATFORMS
 DEPENDENCIES
   mysql
   mysql2
+  nokogiri
   pg
   rails (= 3.2.9)
   sqlite3
