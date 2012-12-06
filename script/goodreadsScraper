@@ -16,8 +16,22 @@ for page in 1..101
 			next
 		end
 
-		content = elements[0].text.gsub(/[(\u201C)(\u201D)(\n)]/, '').strip
+		content = ''
+		lastBreak = elements.filter('br').last
+		elements.each do |element|
+
+				if element.instance_of? Nokogiri::XML::Text
+					content += element.text.gsub(/[(\u201C)(\u201D)(\n)]/, '').strip
+					next
+				end
+
+				if element === lastBreak
+					break
+				end
+
+			end 
 		puts content.inspect
+
 
 		author = elements.css('a').children[0].text
 		puts author.inspect
@@ -26,10 +40,6 @@ for page in 1..101
 		puts book.inspect
 
 		puts '-----------------------------'
-
-		if elements.css('br').size > 1
-			exit
-		end
 
 	end
 end
