@@ -1,3 +1,4 @@
+.env
 vagrant
 /.bundle
 /db/*.sqlite3
