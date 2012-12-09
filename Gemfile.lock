@@ -33,6 +33,8 @@ GEM
     daemons (1.1.9)
     erubis (2.7.0)
     eventmachine (1.0.0)
+    execjs (1.4.0)
+      multi_json (~> 1.0)
     hike (1.2.1)
     i18n (0.6.1)
     journey (1.0.4)
@@ -101,6 +103,9 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.35)
+    uglifier (1.3.0)
+      execjs (>= 0.3.0)
+      multi_json (~> 1.0, >= 1.0.2)
 
 PLATFORMS
   ruby
@@ -114,3 +119,4 @@ DEPENDENCIES
   taps
   therubyracer
   thin
+  uglifier
