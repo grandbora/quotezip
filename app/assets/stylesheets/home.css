@@ -1,0 +1,45 @@
+.create {
+	width: 350px;
+	padding: 10px;
+}
+
+.create textarea.content{
+	width: 345px;
+}
+.create .book{
+	text-align: right;
+}
+
+.create input.book{
+	width: 200px;
+	text-align: left;
+}
+
+.create .submit{
+	text-align: right;
+}
+
+.list {
+	padding: 10px;
+	padding-right: 0px;
+	margin: 10px;
+	margin-left: 380px;
+	margin-right: 0px;
+}
+
+.list ul li {
+	list-style-type: disc; 
+	padding-top: 4px;
+	padding-bottom: 1px;
+	padding-right: 10px;
+}
+
+.list ul li:nth-child(odd) {
+	background-color: #F3F3FA;
+}
+
+.list ul li .book{
+	text-align: right;
+	font-style: italic;
+	color: #A0A0C0;
+}

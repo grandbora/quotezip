@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Repo::Application.config.secret_token = 'c0ae239089c8382597ea4f7c12b05de82c90d6fca4a3d4fd8b86563255e6d289fb073de2e65d05cab72d6c0ab3e3dabfad38fb3d033977130fd05d879889ae9c'
+QuotezipApp::Application.config.secret_token = 'dc8aa499ab6439e1686c15df04a096e82f77fc7c17c43301a74cd9a19b2503dc11c22d03d5dae02c4d6534eb3f546fe352f8bab8868a5e117facd2c8185c57c1'

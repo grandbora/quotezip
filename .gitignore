@@ -1,6 +1,6 @@
-.env
-vagrant
+.DS_Store
+/.env
+/vagrant
 /.bundle
-/db/*.sqlite3
 /log/*.log
 /tmp

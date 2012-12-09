@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Repo::Application.load_tasks
+QuotezipApp::Application.load_tasks

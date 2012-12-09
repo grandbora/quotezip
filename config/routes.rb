@@ -1,12 +1,9 @@
-Repo::Application.routes.draw do
-  resources :quotes
+QuotezipApp::Application.routes.draw do
 
   root :to => "home#index"
   post "save" => "home#save"
 
   get "about" => "static#about"
-
-  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
