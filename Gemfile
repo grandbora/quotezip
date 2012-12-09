@@ -14,3 +14,7 @@ group :development, :test do
   gem 'taps'
   gem 'nokogiri'
 end
+
+group :assets do
+  gem 'nokogiri'
+end
