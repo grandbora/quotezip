@@ -17,4 +17,5 @@ end
 
 group :assets do
 	gem 'uglifier'
+	gem 'nokogiri'
 end
