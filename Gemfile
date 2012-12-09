@@ -5,6 +5,7 @@ gem 'thin'
 
 group :production do
   gem "pg"
+  gem "uglifier"
 end
 
 group :development, :test do
