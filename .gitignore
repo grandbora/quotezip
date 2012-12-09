@@ -1,6 +1,7 @@
-.DS_Store
+/public/assets
 /.env
 /vagrant
 /.bundle
 /log/*.log
 /tmp
+.DS_Store
