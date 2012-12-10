@@ -1,4 +1,5 @@
 var lastQ = '';
+var searchTimeoutId;
 
 /*
  *
@@ -8,7 +9,11 @@ function observeSearchValue(q) {
 	if (lastQ === q) return;
 	lastQ = q;
 
-	filterQuotes(q);
+	clearTimeout(searchTimeoutId);
+
+	searchTimeoutId = setTimeout(function(){
+		filterQuotes(q);
+	}, 2000);
 }
 
 /*

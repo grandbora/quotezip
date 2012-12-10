@@ -11,9 +11,9 @@
 		</div>
 	<% end %>
 </div>
-<!-- <div class="search">
+<div class="search">
 	<input name="q" type="text" />
-</div> -->
+</div>
 <div class="list">
   <ul>
 	<% @quotes.each do |quote| %>
@@ -26,6 +26,6 @@
 </div>
 <script>
 $(function() {
-	// setInterval(function() { observeSearchValue($('.search input').val()); }, 500);
+	setInterval(function() { observeSearchValue($('.search input').val()); }, 500);
 });
 </script>
