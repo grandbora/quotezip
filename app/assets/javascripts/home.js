@@ -26,6 +26,8 @@ function filterQuotes(q) {
 	if ('' == q) return ;
 
 	$(".list ul li:not(:contains('"+q+"'))").hide();
+
+	_gaq.push(['_trackEvent', 'interaction', 'Search', q]);
 }
 
 /*
