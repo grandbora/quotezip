@@ -13,7 +13,7 @@ function observeSearchValue(q) {
 
 	searchTimeoutId = setTimeout(function(){
 		filterQuotes(q);
-	}, 2000);
+	}, 1000);
 }
 
 /*
