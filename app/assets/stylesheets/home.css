@@ -19,12 +19,13 @@
 	text-align: right;
 }
 
-.list, .search {
-	padding: 10px;
-	padding-right: 0px;
-	margin: 10px;
-	margin-left: 380px;
-	margin-right: 0px;
+.search {
+	padding: 10px 0 0 0;
+	margin: 0 0 0 380px;
+}
+
+.list {
+	margin: 0 0 0 380px;
 }
 
 .list ul li {
