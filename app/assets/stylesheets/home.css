@@ -19,7 +19,7 @@
 	text-align: right;
 }
 
-.list {
+.list, .search {
 	padding: 10px;
 	padding-right: 0px;
 	margin: 10px;

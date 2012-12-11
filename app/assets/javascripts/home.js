@@ -10,7 +10,6 @@ function observeSearchValue(q) {
 	lastQ = q;
 
 	clearTimeout(searchTimeoutId);
-	console.log('timeout cleared : ' + searchTimeoutId);
 
 	searchTimeoutId = setTimeout(function(){
 		filterQuotes(q);
@@ -22,7 +21,6 @@ function observeSearchValue(q) {
  * @param q search parameter
  */
 function filterQuotes(q) {
-	console.log('filter is running for : ' + q);
 	resetQuotes();
 
 	if ('' == q) return ;
