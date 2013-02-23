@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 	
 	def index
-		@quotes = Quote.all(:order => "created_at DESC", :limit => 500)
+		@quotes = Quote.all(:order => "created_at DESC", :limit => 150)
 	end
 
 	def save
