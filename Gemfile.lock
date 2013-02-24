@@ -50,7 +50,6 @@ GEM
     multi_json (1.4.0)
     mysql (2.9.0)
     mysql2 (0.3.11)
-    newrelic_rpm (3.5.4.33)
     nokogiri (1.5.5)
     pg (0.14.1)
     polyglot (0.3.3)
@@ -118,7 +117,6 @@ DEPENDENCIES
   foreman
   mysql
   mysql2
-  newrelic_rpm
   nokogiri
   pg
   rails (= 3.2.9)
