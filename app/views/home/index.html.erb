@@ -1,11 +1,13 @@
 <div class="create left">
-	<div class="header">Enter your own quote : </div>
+	<div class="header">Enter your quote : </div>
 	
 	<%= form_tag({ :action => :save }, { :method => :post }) do %>
-		<div><%= text_area "quote", "content", :rows => 5, :class => "content" %></div>
+
+	
 		<div class="book">
 			<span>from the book</span> <%= text_field "quote", "book", :size => 500, :class => "book" %>
 		</div>
+		<div><%= text_area "quote", "content", :rows => 5, :class => "content" %></div>
 		<div class="submit">
 			<%= submit_tag("Post") %>
 		</div>
