@@ -1,8 +1,10 @@
 QuotezipApp::Application.routes.draw do
 
   root :to => "home#index"
-  post "save" => "home#save"
+  get "quote" => "home#get_by_book"
+  
 
+  post "save" => "home#save"
   get "about" => "static#about"
 
   # The priority is based upon order of creation:

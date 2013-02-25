@@ -1,33 +1,38 @@
 <div class="create left">
-	<div class="header">Enter your quote : </div>
-	
-	<%= form_tag({ :action => :save }, { :method => :post }) do %>
+  <div class="header">Enter your quote : </div>
+  
+  <%= form_tag({ :action => :save }, { :method => :post }) do %>
 
-	
-		<div class="book">
-			<span>from </span> <%= text_field "quote", "book", :size => 500, :class => "book", :placeholder => "the book" %>
-		</div>
-		<div><%= text_area "quote", "content", :rows => 5, :class => "content" %></div>
-		<div class="submit">
-			<%= submit_tag("Post") %>
-		</div>
-	<% end %>
+    <div class="book">
+      <span>from </span> <%= text_field "quote", "book", :size => 500, :class => "book", :placeholder => "the book" %>
+    </div>
+
+    <div><%= text_area "quote", "content", :rows => 5, :class => "content" %></div>
+
+    <div class="submit">
+      <%= submit_tag("Post") %>
+    </div>
+
+  <% end %>
 </div>
+
 <div class="search">
-	<input name="q" type="text" placeholder='search'/>
+  <input name="q" type="text" placeholder='search'/>
 </div>
+
 <div class="list">
   <ul>
-	<% @quotes.each do |quote| %>
-	  	<li>
-		  <div class='content'><%= quote.content %></div>
-		  <div class='book'><%= quote.book %></div>
-	  	</li>
-	<% end %>
+  <% @quotes.each do |quote| %>
+      <li>
+        <div class='content'><%= quote.content %></div>
+        <div class='book'><%= quote.book %></div>
+      </li>
+  <% end %>
   </ul>
 </div>
 <script>
 $(function() {
-	setInterval(function() { observeSearchValue($('.search input').val()); }, 500);
+  setInterval(function() { observeSearchValue($('.search input').val()); }, 500)
+  setAutoComplete()
 });
 </script>

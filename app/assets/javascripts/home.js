@@ -1,73 +1,85 @@
-var lastQ = '';
-var searchTimeoutId;
+var lastQ = ''
+var searchTimeoutId
 
-/*
- *
- * @param q search parameter
- */
 function observeSearchValue(q) {
-  if (lastQ === q) return;
-  lastQ = q;
+  if (lastQ === q) return
+  lastQ = q
 
-  clearTimeout(searchTimeoutId);
+  clearTimeout(searchTimeoutId)
 
   searchTimeoutId = setTimeout(function(){
-    filterQuotes(q);
-  }, 1000);
+    filterQuotes(q)
+  }, 1000)
 }
 
-/*
- *
- * @param q search parameter
- */
 function filterQuotes(q) {
-  resetQuotes();
-
-  if ('' == q) return ;
-
-  $(".list ul li:not(:contains('"+q+"'))").hide();
-
-  _gaq.push(['_trackEvent', 'interaction', 'Search', q]);
+  resetQuotes()
+  if ('' == q) return 
+  $(".list ul li:not(:contains('"+q+"'))").hide()
+  _gaq.push(['_trackEvent', 'interaction', 'Search', q])
 }
 
-/*
- *
- */
 function resetQuotes() {
-  $(".list ul li").show();
+  $(".list ul li").show()
 }
 
-$(".book").autocomplete({
+function setAutoComplete() {
+
+  $("input.book").autocomplete({
   source: function(request, response) {
-    $.ajax({
-      url: "http://ws.geonames.org/searchJSON",
-      dataType: "jsonp",
-      data: {
-        featureClass: "P",
-        style: "full",
-        maxRows: 12,
-        name_startsWith: request.term
-      },
-      success: function( data ) {
-        response( $.map( data.geonames, function( item ) {
-          return {
-            label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
-            value: item.name
-          }
-        }));
-      }
-    });
-  },
-  minLength: 2,
-  select: function( event, ui ) {
-    log( ui.item ?
-      "Selected: " + ui.item.label :
-      "Nothing selected, input was " + this.value);
-  },
-  open: function() {
-    $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" );
-  },
-  close: function() {
-    $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" );
-  }
-});
+    
+      $.ajax({
+        url: "https://www.googleapis.com/books/v1/volumes",
+        dataType: "jsonp",
+        data: {
+          q : 'intitle:' + request.term,
+          key : 'AIzaSyBjdXbsKKP2GnX2k_JABQvBfCZVJYDBwbI',
+          langRestrict : 'en',
+          maxResults : 12
+        },
+        success: function( data ) {
+          response($.map(data.items, function(item) {
+            return {
+              label: item.volumeInfo.title,
+              value: item.volumeInfo.title,
+              data: item
+            }
+          }))
+        }
+      })
+    },
+    minLength: 2,
+    select: function(event, ui) {
+      reloadQuotes(ui.item)
+    },
+    open: function() {
+      $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" )
+    },
+    close: function() {
+      $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" )
+    }
+  })
+}
+
+function reloadQuotes(bookItem) {
+  quotes = fetchQuotesByBook(bookItem)
+}
+
+function fetchQuotesByBook(bookItem) {
+  $.ajax({
+    url: "/quote.json",
+    dataType: "json",
+    data: {
+      name : bookItem.value
+    },
+    success: function(data, status, xhr) {
+      $('.list ul').empty()
+
+      $.each(data, function(index, book) {
+        var contentDiv = $('<div>').addClass('content').append(book.content)
+        var bookDiv = $('<div>').addClass('book').append(book.book)
+        $('.list ul').append($('<li>').append(contentDiv, bookDiv))
+      })
+    }
+  })
+}
