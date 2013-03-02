@@ -1,7 +1,7 @@
 var lastQ = ''
 var searchTimeoutId
 
-function observeSearchValue(q) {
+function observeValue(q) {
   if (lastQ === q) return
   lastQ = q
 
@@ -13,14 +13,24 @@ function observeSearchValue(q) {
 }
 
 function filterQuotes(q) {
-  resetQuotes()
   if ('' == q) return 
-  $(".list ul li:not(:contains('"+q+"'))").hide()
-  _gaq.push(['_trackEvent', 'interaction', 'Search', q])
-}
+  
+  $.ajax({
+    url: "/quote/content.json",
+    dataType: "json",
+    data: {
+      q : q
+    },
+    success: function(data, status, xhr) {
+      $('.list ul').empty()
 
-function resetQuotes() {
-  $(".list ul li").show()
+      $.each(data, function(index, book) {
+        var contentDiv = $('<div>').addClass('content').append(book.content)
+        var bookDiv = $('<div>').addClass('book').append(book.book)
+        $('.list ul').append($('<li>').append(contentDiv, bookDiv))
+      })
+    }
+  })
 }
 
 function setAutoComplete() {
@@ -50,7 +60,7 @@ function setAutoComplete() {
     },
     minLength: 2,
     select: function(event, ui) {
-      reloadQuotes(ui.item)
+      fetchQuotesByBook(ui.item)
     },
     open: function() {
       $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" )
@@ -61,16 +71,12 @@ function setAutoComplete() {
   })
 }
 
-function reloadQuotes(bookItem) {
-  quotes = fetchQuotesByBook(bookItem)
-}
-
 function fetchQuotesByBook(bookItem) {
   $.ajax({
-    url: "/quote.json",
+    url: "/quote/book.json",
     dataType: "json",
     data: {
-      name : bookItem.value
+      q : bookItem.value
     },
     success: function(data, status, xhr) {
       $('.list ul').empty()
@@ -82,4 +88,16 @@ function fetchQuotesByBook(bookItem) {
       })
     }
   })
+}
+
+function formValidator() {
+  if("" === $("input.book").val()){
+    alert('Btw, what is the title of the book?')
+    return false;
+  }
+
+  if("" === $('.create .content').val()){
+    alert('Lets type in the quote first.')
+    return false;
+  }
 }

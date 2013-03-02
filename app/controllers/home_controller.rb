@@ -13,7 +13,11 @@ class HomeController < ApplicationController
   end
 
   def get_by_book
-    respond_with(Quote.where("book = :book", {:book => params['name']}))
+    respond_with(Quote.where("book = :book", {:book => params['q']}))
+  end
+
+  def get_by_content
+    respond_with(Quote.where("content LIKE :q", {:q => "%#{params['q']}%"}))
   end
 
 end

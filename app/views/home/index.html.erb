@@ -1,23 +1,19 @@
 <div class="create left">
-  <div class="header">Enter your quote : </div>
   
   <%= form_tag({ :action => :save }, { :method => :post }) do %>
 
     <div class="book">
-      <span>from </span> <%= text_field "quote", "book", :size => 500, :class => "book", :placeholder => "the book" %>
+      <span>Share your quote :</span>
+      <%= text_field "quote", "book", :size => 500, :class => "book", :placeholder => "from the book ..." %>
     </div>
 
-    <div><%= text_area "quote", "content", :rows => 5, :class => "content" %></div>
+    <div><%= text_area "quote", "content", :rows => 5, :class => "content", :placeholder => "it says the quote ..." %></div>
 
     <div class="submit">
       <%= submit_tag("Post") %>
     </div>
 
   <% end %>
-</div>
-
-<div class="search">
-  <input name="q" type="text" placeholder='search'/>
 </div>
 
 <div class="list">
@@ -32,7 +28,8 @@
 </div>
 <script>
 $(function() {
-  setInterval(function() { observeSearchValue($('.search input').val()); }, 500)
   setAutoComplete()
+  setInterval(function() { observeValue($('.create .content').val()); }, 500)
+  $('.create form').on('submit', formValidator) 
 });
 </script>

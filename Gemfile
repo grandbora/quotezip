@@ -15,6 +15,7 @@ group :development, :test do
   gem 'nokogiri'
   gem 'taps'
   gem 'foreman'
+  gem 'rspec'
 end
 
 group :assets do

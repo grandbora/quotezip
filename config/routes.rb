@@ -1,7 +1,8 @@
 QuotezipApp::Application.routes.draw do
 
   root :to => "home#index"
-  get "quote" => "home#get_by_book"
+  get "quote/book" => "home#get_by_book"
+  get "quote/content" => "home#get_by_content"
   
 
   post "save" => "home#save"
