@@ -1,7 +1,11 @@
 var lastQ = ''
 var searchTimeoutId
 
-function observeValue(q) {
+function observeValue() {
+
+  q = $('.create .content').val()
+  q = $.trim(q)
+  
   if (lastQ === q) return
   lastQ = q
 
