@@ -13,24 +13,29 @@ function observeValue(q) {
 }
 
 function filterQuotes(q) {
-  if ('' == q) return 
-  
-  $.ajax({
-    url: "/quote/content.json",
-    dataType: "json",
-    data: {
-      q : q
-    },
-    success: function(data, status, xhr) {
-      $('.list ul').empty()
+  if ('' == q) return loadAllQuotes() 
 
-      $.each(data, function(index, book) {
-        var contentDiv = $('<div>').addClass('content').append(book.content)
-        var bookDiv = $('<div>').addClass('book').append(book.book)
-        $('.list ul').append($('<li>').append(contentDiv, bookDiv))
-      })
-    }
-  })
+  if ("" === $("input.book").val()) {
+    $.ajax({
+      url: "/quote/content.json",
+      dataType: "json",
+      data: {
+        q : q
+      },
+      success: function(data, status, xhr) {
+        $('.list ul').empty()
+
+        $.each(data, function(index, book) {
+          var contentDiv = $('<div>').addClass('content').append(book.content)
+          var bookDiv = $('<div>').addClass('book').append(book.book)
+          $('.list ul').append($('<li>').append(contentDiv, bookDiv))
+        })
+      }
+    })
+  }
+
+  //todo make bold here
+
 }
 
 function setAutoComplete() {
@@ -69,7 +74,10 @@ function setAutoComplete() {
       $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" )
     },
     change: function(event, ui) {
-      if (!ui.item) this.value = ''
+      if (!ui.item) {
+       this.value = ''
+       loadAllQuotes() 
+      }
     }
   })
 }
@@ -81,6 +89,22 @@ function fetchQuotesByBook(bookItem) {
     data: {
       q : bookItem.value
     },
+    success: function(data, status, xhr) {
+      $('.list ul').empty()
+
+      $.each(data, function(index, book) {
+        var contentDiv = $('<div>').addClass('content').append(book.content)
+        var bookDiv = $('<div>').addClass('book').append(book.book)
+        $('.list ul').append($('<li>').append(contentDiv, bookDiv))
+      })
+    }
+  })
+}
+
+function loadAllQuotes() {
+  $.ajax({
+    url: "/quote.json",
+    dataType: "json",
     success: function(data, status, xhr) {
       $('.list ul').empty()
 
