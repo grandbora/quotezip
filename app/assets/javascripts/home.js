@@ -9,36 +9,38 @@ function observeValue(q) {
 
   searchTimeoutId = setTimeout(function(){
     filterQuotes(q)
-  }, 1000)
+  }, 100)
 }
 
 function filterQuotes(q) {
-  if ('' == q) return loadAllQuotes() 
-
-  if ("" === $("input.book").val()) {
-    $.ajax({
-      url: "/quote/content.json",
-      dataType: "json",
-      data: {
-        q : q
-      },
-      success: function(data, status, xhr) {
-        $('.list ul').empty()
-
-        $.each(data, function(index, book) {
-          var contentDiv = $('<div>').addClass('content').append(book.content)
-          var bookDiv = $('<div>').addClass('book').append(book.book)
-          $('.list ul').append($('<li>').append(contentDiv, bookDiv))
-
-          //make bold here
-          $('.list ul li').removeHighlight().highlight(q);
-        })
-      }
-    })
+  if ("" !== $("input.book").val()) {
+    //make bold here
+    $('.list ul li').removeHighlight().highlight(q)
+    return
   }
 
-  //make bold here
-  $('.list ul li').removeHighlight().highlight(q);
+  if ('' == q) return loadAllQuotes() 
+
+  $.ajax({
+    url: "/quote/content.json",
+    dataType: "json",
+    data: {
+      q : q
+    },
+    success: function(data, status, xhr) {
+      $('.list ul').empty()
+
+      $.each(data, function(index, book) {
+        var contentDiv = $('<div>').addClass('content').append(book.content)
+        var bookDiv = $('<div>').addClass('book').append(book.book)
+        $('.list ul').append($('<li>').append(contentDiv, bookDiv))
+
+        //make bold here
+        $('.list ul li').removeHighlight().highlight(q)
+      })
+    }
+  })
+
 }
 
 function setAutoComplete() {
@@ -134,6 +136,7 @@ function formValidator() {
 
 
 //highlight
+//<http://johannburkard.de/blog/programming/javascript/highlight-javascript-text-higlighting-jquery-plugin.html>
 jQuery.fn.highlight = function(pat) {
  function innerHighlight(node, pat) {
   var skip = 0;

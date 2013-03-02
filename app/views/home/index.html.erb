@@ -29,7 +29,7 @@
 <script>
 $(function() {
   setAutoComplete()
-  setInterval(function() { observeValue($('.create .content').val()); }, 500)
+  setInterval(function() { observeValue($('.create .content').val()); }, 10)
   $('.create form').on('submit', formValidator) 
 });
 </script>

@@ -46,3 +46,8 @@
   font-style: italic;
   color: #A0A0C0;
 }
+
+ul.ui-autocomplete
+{
+  width: 600px;
+}
