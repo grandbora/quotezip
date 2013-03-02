@@ -67,6 +67,9 @@ function setAutoComplete() {
     },
     close: function() {
       $( this ).removeClass( "ui-corner-top" ).addClass( "ui-corner-all" )
+    },
+    change: function(event, ui) {
+      if (!ui.item) this.value = ''
     }
   })
 }
@@ -93,11 +96,11 @@ function fetchQuotesByBook(bookItem) {
 function formValidator() {
   if("" === $("input.book").val()){
     alert('Btw, what is the title of the book?')
-    return false;
+    return false
   }
 
   if("" === $('.create .content').val()){
     alert('Lets type in the quote first.')
-    return false;
+    return false
   }
 }
