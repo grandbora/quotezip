@@ -9,7 +9,7 @@ function observeValue(q) {
 
   searchTimeoutId = setTimeout(function(){
     filterQuotes(q)
-  }, 100)
+  }, 500)
 }
 
 function filterQuotes(q) {
@@ -20,6 +20,7 @@ function filterQuotes(q) {
   }
 
   if ('' == q) return loadAllQuotes() 
+  if (3 > q.length) return
 
   $.ajax({
     url: "/quote/content.json",
@@ -34,10 +35,10 @@ function filterQuotes(q) {
         var contentDiv = $('<div>').addClass('content').append(book.content)
         var bookDiv = $('<div>').addClass('book').append(book.book)
         $('.list ul').append($('<li>').append(contentDiv, bookDiv))
-
-        //make bold here
-        $('.list ul li').removeHighlight().highlight(q)
       })
+
+      //make bold here
+      $('.list ul li').removeHighlight().highlight(q)
     }
   })
 
