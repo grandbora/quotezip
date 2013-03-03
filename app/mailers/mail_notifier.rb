@@ -3,7 +3,7 @@ class MailNotifier < ActionMailer::Base
   def new_quote_notifier()
 
     mail(:to => "Bora Tunga <bora.tunca@yahoo.com>",
-         :from => "quotezip admin from field ",
+         :from => "quotezip@quotezip.com",
          :subject => "quotezip subject",
          :body => { :user => 'user', :url => 'url' }
     )
