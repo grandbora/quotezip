@@ -1,0 +1,5 @@
+class mailController < ApplicationController
+
+  
+
+end
