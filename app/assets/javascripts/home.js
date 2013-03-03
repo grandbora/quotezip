@@ -5,7 +5,7 @@ function observeValue() {
 
   q = $('.create .content').val()
   q = $.trim(q)
-  
+
   if (lastQ === q) return
   lastQ = q
 
@@ -137,6 +137,8 @@ function formValidator() {
     alert('Lets type in the quote first.')
     return false
   }
+
+  _gaq.push(['_trackEvent', 'interaction', 'shareQuote', $('.create .content').val()]);
 }
 
 
