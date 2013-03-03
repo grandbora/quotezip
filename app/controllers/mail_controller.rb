@@ -1,4 +1,4 @@
-class mailController < ApplicationController
+class MailController < ApplicationController
 
   
 
