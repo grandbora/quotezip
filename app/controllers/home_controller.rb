@@ -7,8 +7,11 @@ class HomeController < ApplicationController
   end
 
   def save
-    Quote.new(params['quote']).save
-    return redirect_to :action => "index"
+    quote = Quote.new(params['quote'])
+    quote.save
+    MailNotifier.new_quote_notifier(quote).deliver
+
+    redirect_to :action => "index"
   end
 
   def get_by_book
