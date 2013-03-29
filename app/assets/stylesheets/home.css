@@ -30,7 +30,17 @@
 }
 
 .list {
-  margin: 0 0 0 380px;
+  margin: 0 0 0 400px;
+  padding: 10px;
+}
+
+.list .listTitle {
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+.list ul {
+  padding-left: 10px;
 }
 
 .list ul li {
