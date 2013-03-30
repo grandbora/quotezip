@@ -45,7 +45,7 @@
 
 .list ul li {
   list-style-type: disc; 
-  padding-top: 4px;
+  padding-top: 10px;
   padding-bottom: 1px;
   padding-right: 10px;
   border-bottom: 1px #AAAAFF dotted;
