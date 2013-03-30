@@ -5,8 +5,8 @@ QuotezipApp::Application.routes.draw do
   get "quote/book" => "home#get_by_book"
   get "quote/content" => "home#get_by_content"
   
-
   post "save" => "home#save"
+  post "subscribe" => "home#subscribe"
   get "about" => "static#about"
 
   # The priority is based upon order of creation:

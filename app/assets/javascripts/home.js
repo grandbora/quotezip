@@ -151,6 +151,28 @@ function formValidator() {
 }
 
 
+// subscribe button
+$(function() {
+  $(".subscribe button")
+    .button()
+    .click(function(event) {
+      event.preventDefault()
+
+      inputElm = $('<input/>').attr('type', 'text').attr('name', 'email').attr('placeholder', 'your_email@address.com')
+      submitButton = $('<input/>').attr('type', 'submit').attr('value','subscribe')
+      dialogElm = $('<form/>').addClass('subscribeDialog')
+        .attr('action', '/subscribe')
+        .attr('method', 'post')
+        .append(inputElm, submitButton)
+
+      dialogElm.dialog({
+        modal: true
+      })
+
+      _gaq.push(['_trackEvent', 'subscribe', 'subscribeDialogOpen'])
+    })
+});
+
 //highlight
 //<http://johannburkard.de/blog/programming/javascript/highlight-javascript-text-higlighting-jquery-plugin.html>
 jQuery.fn.highlight = function(pat) {

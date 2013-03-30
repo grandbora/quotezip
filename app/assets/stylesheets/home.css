@@ -23,6 +23,20 @@
   text-align: right;
 }
 
+.create .subscribe{
+  padding: 20px;
+}
+
+.subscribeDialog{
+  text-align: center;
+}
+
+.subscribeDialog input{
+  width: 250px;
+  padding: 2px;
+  margin: 3px;
+}
+
 .search {
   padding: 10px 0 0 0;
   margin: 0 0 0 380px;
