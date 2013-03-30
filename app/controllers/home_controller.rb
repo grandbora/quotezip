@@ -27,9 +27,10 @@ class HomeController < ApplicationController
   end
 
   def subscribe
-    # quote = Quote.new(params['quote'])
-    # quote.save
-    # MailNotifier.new_quote_notifier(quote).deliver
+    user = User.new
+    user.email= params['email']
+    user.save
+    MailNotifier.new_subscription_notifier(user).deliver
 
     redirect_to :action => "index"
   end

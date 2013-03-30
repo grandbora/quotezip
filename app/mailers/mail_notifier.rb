@@ -8,4 +8,14 @@ class MailNotifier < ActionMailer::Base
          :subject => "Ahoy, a new quote on quotezip"
     )
   end
+
+  def new_subscription_notifier(user)
+    mail(:to => "Bora Tunca <bora.tunca@yahoo.com>",
+         :from => "new_subscription@quotezip.com",
+         :subject => "Ahoy, a new subscription on quotezip"
+    ) do |format|
+      format.html { render :text => user.email }
+    end
+  end
+
 end
