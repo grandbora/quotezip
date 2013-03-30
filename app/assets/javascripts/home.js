@@ -20,11 +20,12 @@ function filterQuotes(q) {
   if ("" !== $("input.book").val()) {
     //make bold here
     $('.list ul li').removeHighlight().highlight(q)
+    $('.list .listTitle').text("Quotes containing the text : " + q)
     return
   }
 
   if ('' == q) return loadAllQuotes() 
-  if (3 > q.length) return
+  // if (2 > q.length) return
 
   $.ajax({
     url: "/quote/content.json",
@@ -43,6 +44,7 @@ function filterQuotes(q) {
 
       //make bold here
       $('.list ul li').removeHighlight().highlight(q)
+      $('.list .listTitle').text("Quotes containing the text : " + q)
     }
   })
 
@@ -102,6 +104,8 @@ function fetchQuotesByBook(bookItem) {
     success: function(data, status, xhr) {
       $('.list ul').empty()
 
+      $('.list .listTitle').text("Quotes from the book : " + bookItem.value)
+
       $.each(data, function(index, book) {
         var contentDiv = $('<div>').addClass('content').append(book.content)
         var bookDiv = $('<div>').addClass('book').append(book.book)
@@ -117,6 +121,8 @@ function loadAllQuotes() {
     dataType: "json",
     success: function(data, status, xhr) {
       $('.list ul').empty()
+
+      $('.list .listTitle').text("Recent Quotes")
 
       $.each(data, function(index, book) {
         var contentDiv = $('<div>').addClass('content').append(book.content)
