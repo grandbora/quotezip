@@ -21,6 +21,7 @@ function filterQuotes(q) {
     //make bold here
     $('.list ul li').removeHighlight().highlight(q)
     $('.list .listTitle').text("Quotes containing the text : " + q)
+    _gaq.push(['_trackEvent', 'interaction', 'typeQuoteWithBook', q + " -- "+ $("input.book").val()])
     return
   }
 
@@ -45,6 +46,7 @@ function filterQuotes(q) {
       //make bold here
       $('.list ul li').removeHighlight().highlight(q)
       $('.list .listTitle').text("Quotes containing the text : " + q)
+      _gaq.push(['_trackEvent', 'interaction', 'typeQuote', q]);
     }
   })
 
@@ -78,6 +80,7 @@ function setAutoComplete() {
     minLength: 2,
     select: function(event, ui) {
       fetchQuotesByBook(ui.item)
+      _gaq.push(['_trackEvent', 'interaction', 'selectBook', ui.item.value])
     },
     open: function() {
       $( this ).removeClass( "ui-corner-all" ).addClass( "ui-corner-top" )
@@ -144,7 +147,7 @@ function formValidator() {
     return false
   }
 
-  _gaq.push(['_trackEvent', 'interaction', 'shareQuote', $('.create .content').val()]);
+  _gaq.push(['_trackEvent', 'interaction', 'shareQuote', $('.create .content').val()])
 }
 
 
