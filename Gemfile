@@ -2,14 +2,13 @@ source 'https://rubygems.org'
 
 gem 'thin'
 gem 'rails', '3.2.9'
+gem 'mysql'
+gem 'mysql2'
 
 group :production do
-  gem "pg"
 end
 
 group :development, :test do
-  gem 'mysql'
-  gem 'mysql2'
   gem 'sqlite3'
   gem 'therubyracer'
   gem 'nokogiri'
