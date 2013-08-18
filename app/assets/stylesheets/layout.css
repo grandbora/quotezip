@@ -80,5 +80,9 @@ html,body {
 .bottom .add{
 	text-align: center;
 	background-color: #3366CC;
-	color: #FFFFFF;	
+	color: #FFFFFF;
+	cursor: pointer;
+	font-size: 25px;
+	-moz-border-radius: 35px;
+	border-radius: 35px;
 }
