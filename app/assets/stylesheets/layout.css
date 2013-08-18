@@ -76,3 +76,9 @@ html,body {
 	color:inherit;
 	text-decoration:none;
 }
+
+.bottom .add{
+	text-align: center;
+	background-color: #3366CC;
+	color: #FFFFFF;	
+}
