@@ -18,6 +18,8 @@
 }
 
 .list ul li {
+  float: left;
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 1px;
   padding-right: 10px;
@@ -26,11 +28,13 @@
 
 .list ul li .content{
   float: left;
+  width: 90%;
 }
 
 .list ul li .book{
+  float: right;
+  width: 10%;
   text-align: right;
   font-style: italic;
   color: #A0A0C0;
-  float: right;
 }
