@@ -1,0 +1,31 @@
+.highlight {
+  background-color: #CCFD34;
+}
+
+.list {
+  margin: 0 0 0 400px;
+  padding: 10px;
+}
+
+.list .listTitle {
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+.list ul {
+  padding-left: 10px;
+}
+
+.list ul li {
+  list-style-type: disc; 
+  padding-top: 10px;
+  padding-bottom: 1px;
+  padding-right: 10px;
+  border-bottom: 1px #AAAAFF dotted;
+}
+
+.list ul li .book{
+  text-align: right;
+  font-style: italic;
+  color: #A0A0C0;
+}
