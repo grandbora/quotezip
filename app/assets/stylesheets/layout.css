@@ -9,7 +9,6 @@ blockquote 				{quotes: none;}
 blockquote:before, blockquote:after {content: '';content: none;}
 del 					{text-decoration: line-through;}
 table 					{border-collapse: collapse;	border-spacing: 0;}
-body					{font-family:Arial, Helvetica, sans-serif;}
 
 html,body {
 	height: 100%;

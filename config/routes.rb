@@ -9,8 +9,6 @@ QuotezipApp::Application.routes.draw do
   post "subscribe" => "home#subscribe"
   get "about" => "static#about"
 
-  get "test" => "home#test"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
