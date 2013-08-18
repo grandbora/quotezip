@@ -22,12 +22,16 @@
   padding-top: 10px;
   padding-bottom: 1px;
   padding-right: 10px;
+  border-bottom: 1px #AAAAFF dotted;
+}
+
+.list ul li .content{
+  float: left;
 }
 
 .list ul li .book{
   text-align: right;
   font-style: italic;
   color: #A0A0C0;
-  border-bottom: 1px #AAAAFF dotted;
   float: right;
 }
