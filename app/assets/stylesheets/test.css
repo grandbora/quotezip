@@ -9,19 +9,18 @@
 }
 
 .list ul li {
-  float: left;
   width: 100%;
   border-bottom: 1px #AAAAFF dotted;
 }
 
 .list ul li .content{
-  float: left;
+  display: inline-block;
   width: 89%;
   padding-left: 3px;
 }
 
 .list ul li .book{
-  float: right;
+  display: inline-block;
   width: 10%;
   padding-right: 2px;
   text-align: right;
