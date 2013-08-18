@@ -35,4 +35,7 @@ class HomeController < ApplicationController
     redirect_to :action => "index"
   end
 
+  def test
+  end
+
 end

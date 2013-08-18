@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quotezip</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="top">
+		<div class="logo left">
+			<a href="<%= url_for :controller => 'home', :action => 'index' %>">quotezip<span class="beta">beta</span></a>
+		</div>
+		<div class="topBar">
+			<ul>
+				<li><%= link_to 'about', :controller => 'static', :action => 'about' %></li>
+			</ul>
+		</div>
+	</div>
+	<div class="middle">
+		<div class="content"><%= yield %></div>
+	</div>
+	<div class="bottom"></div>
+</body>
+</html>
