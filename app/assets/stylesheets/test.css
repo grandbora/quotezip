@@ -2,38 +2,28 @@
   background-color: #CCFD34;
 }
 
-.list {
-  margin-left: 5px;
-  padding: 10px;
-}
-
 .list .listTitle {
   font-size: 25px;
   text-align: center;
   padding-bottom: 10px;
 }
 
-.list ul {
-  padding-left: 10px;
-}
-
 .list ul li {
   float: left;
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 1px;
-  padding-right: 10px;
   border-bottom: 1px #AAAAFF dotted;
 }
 
 .list ul li .content{
   float: left;
-  width: 90%;
+  width: 89%;
+  padding-left: 3px;
 }
 
 .list ul li .book{
   float: right;
   width: 10%;
+  padding-right: 2px;
   text-align: right;
   font-style: italic;
   color: #A0A0C0;
