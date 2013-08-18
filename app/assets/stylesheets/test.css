@@ -10,17 +10,21 @@
 
 .list ul li {
   width: 100%;
+  margin-bottom: 10px;
   border-bottom: 1px #AAAAFF dotted;
 }
 
-.list ul li .content{
+.list ul li .content, .list ul li .book{
   display: inline-block;
+  vertical-align: middle;
+}
+
+.list ul li .content{
   width: 89%;
   padding-left: 3px;
 }
 
 .list ul li .book{
-  display: inline-block;
   width: 10%;
   padding-right: 5px;
   text-align: right;
