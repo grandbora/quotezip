@@ -1,11 +1,11 @@
 .create .content, .create .book{
   width: 99%;
-  font-size: 20px;
   padding: 5px;
 }
 
 .create .content  input, .create .book input{
   width: 99%;
+  font-size: 20px;
 }
 
 .create .book{
