@@ -137,12 +137,12 @@ function loadAllQuotes() {
 }
 
 function formValidator() {
-  if("" === $("input.book").val()){
+  if("" === $(".book-input").val()){
     alert('Btw, what is the title of the book?')
     return false
   }
 
-  if("" === $('.create .content').val()){
+  if("" === $('.content-input').val()){
     alert('Lets type in the quote first.')
     return false
   }
