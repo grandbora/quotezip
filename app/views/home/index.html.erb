@@ -20,7 +20,7 @@
     <script>
   $(function() {
     $('.add').on('click', function (e) {
-      window.location.replace("<%= url_for :controller => 'home', :action => 'create' %>")
+      window.location = "<%= url_for :controller => 'home', :action => 'create' %>";
     })
   });
   </script>
