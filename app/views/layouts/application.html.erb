@@ -20,7 +20,7 @@
 		<div class="content"><%= yield %></div>
 	</div>
 	<div class="bottom">
-		<div class="add">Add New Quote</div>
+		<div class="add"><%= link_to 'Add New Quote', :controller => 'home', :action => 'create' %></div>
 	</div>
 </body>
 </html>
