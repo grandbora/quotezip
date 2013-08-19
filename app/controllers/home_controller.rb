@@ -6,9 +6,6 @@ class HomeController < ApplicationController
     @quotes = Quote.all(:order => "updated_at DESC", :limit => 150)
   end
 
-  def create
-  end
-
   def get_by_book
     respond_with(Quote.where("book = :book", {:book => params['q']}))
   end
