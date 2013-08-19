@@ -5,11 +5,11 @@
     <%= form_tag({ :action => :save }, { :method => :post }) do %>
 
       <div class="book">
-        <%= text_field "quote", "book-input", :size => 500, :class => "book", :placeholder => "from the book ..." %>
+        <%= text_field "quote", "book", :size => 500, :class => "book-input", :placeholder => "from the book ..." %>
       </div>
 
       <div class="content">
-        <%= text_area "quote", "content-input", :rows => 5, :class => "content", :placeholder => "it says the quote ..." %>
+        <%= text_area "quote", "content", :rows => 5, :class => "content-input", :placeholder => "it says the quote ..." %>
       </div>
 
     <% end %>
