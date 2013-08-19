@@ -1,25 +1,30 @@
-<div class="create">
-  
-  <%= form_tag({ :action => :save }, { :method => :post }) do %>
 
-    <div class="book">
-      <span>Share your quote :</span>
-      <%= text_field "quote", "book", :size => 500, :class => "book", :placeholder => "from the book ..." %>
-    </div>
+<% content_for :body do %>
+  <div class="create">
+    
+    <%= form_tag({ :action => :save }, { :method => :post }) do %>
 
-    <div><%= text_area "quote", "content", :rows => 5, :class => "content", :placeholder => "it says the quote ..." %></div>
+      <div class="book">
+        <%= text_field "quote", "book", :size => 500, :class => "book", :placeholder => "from the book ..." %>
+      </div>
 
-    <div class="submit">
-      <%= submit_tag("Add") %>
-    </div>
+      <div>
+        <%= text_area "quote", "content", :rows => 5, :class => "content", :placeholder => "it says the quote ..." %>
+      </div>
 
-  <% end %>
-  
-</div>
-<script>
-$(function() {
-  setAutoComplete()
-  setInterval(function() { observeValue(); }, 100)
-  $('.create form').on('submit', formValidator) 
-});
-</script>
+    <% end %>
+    
+  </div>
+  <script>
+  $(function() {
+    setAutoComplete()
+    setInterval(function() { observeValue(); }, 100)
+    $('.create form').on('submit', formValidator) 
+  });
+  </script>
+<% end %>
+
+<% content_for :footer do %>
+  <div class="add"><%= submit_tag("Add") %></div>
+<% end %>
+    
