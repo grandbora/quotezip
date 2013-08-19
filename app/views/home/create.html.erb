@@ -25,6 +25,13 @@
 <% end %>
 
 <% content_for :footer do %>
-  <div class="add"><%= submit_tag("Add") %></div>
-<% end %>
-    
+  <div class="add"><a href='#'>Submit</a></div>
+  <script>
+  $(function() {
+    $('.create form').on('submit', formValidator) 
+    $('.add a').on('click', function () {
+      $('.create form').submit();
+    }) 
+  });
+  </script>
+<% end %>   
