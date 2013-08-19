@@ -28,10 +28,8 @@
   <script>
   $(function() {
     $('.create form').on('submit', formValidator) 
-    $('.add a').on('click', function (e) {
-      e.stopPropagation();
+    $('.add').on('click', function (e) {
       $('.create form').submit();
-      return false;
     }) 
   });
   </script>
