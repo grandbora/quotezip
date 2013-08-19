@@ -1,21 +1,10 @@
-.create .content{
-  width: 345px;
-}
-.create .book{
-  text-align: right;
+.create .content, .create .book{
+  width: 100%;
+  font-size: 20px;
 }
 
 .create .book{
-  width: 200px;
   text-align: left;
-}
-
-.create .submit{
-  text-align: right;
-}
-
-.create .subscribe{
-  padding: 20px;
 }
 
 ul.ui-autocomplete
