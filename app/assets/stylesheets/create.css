@@ -1,6 +1,7 @@
 .create .content, .create .book{
-  width: 100%;
+  width: 99%;
   font-size: 20px;
+  padding: 5px;
 }
 
 .create .book{
@@ -9,5 +10,5 @@
 
 ul.ui-autocomplete
 {
-  width: 600px;
+  width: 99%;
 }

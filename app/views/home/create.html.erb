@@ -5,11 +5,11 @@
     <%= form_tag({ :action => :save }, { :method => :post }) do %>
 
       <div class="book">
-        <%= text_field "quote", "book", :size => 500, :class => "book", :placeholder => "from the book ..." %>
+        <%= text_field "quote", "book-input", :size => 500, :class => "book", :placeholder => "from the book ..." %>
       </div>
 
-      <div>
-        <%= text_area "quote", "content", :rows => 5, :class => "content", :placeholder => "it says the quote ..." %>
+      <div class="content">
+        <%= text_area "quote", "content-input", :rows => 5, :class => "content", :placeholder => "it says the quote ..." %>
       </div>
 
     <% end %>
@@ -24,11 +24,12 @@
 <% end %>
 
 <% content_for :footer do %>
-  <div class="add"><a href='#'>Submit</a></div>
+  <div class="add">Submit</div>
   <script>
   $(function() {
     $('.create form').on('submit', formValidator) 
-    $('.add a').on('click', function () {
+    $('.add a').on('click', function (e) {
+      e.stopPropagation();
       $('.create form').submit();
       return false;
     }) 
