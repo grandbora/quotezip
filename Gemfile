@@ -18,6 +18,8 @@ group :development, :test do
 end
 
 group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
   gem 'uglifier'
   gem 'nokogiri'
 end
