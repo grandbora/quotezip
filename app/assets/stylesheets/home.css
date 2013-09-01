@@ -15,7 +15,7 @@
   border-bottom: 1px #AAAAFF dotted;
 }
 
-.list ul li .content, .list ul li .book{
+.list ul li .content, .list ul li .book, .list ul li .social-share-button {
   display: inline-block;
   vertical-align: middle;
 }
