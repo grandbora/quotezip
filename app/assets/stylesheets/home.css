@@ -21,12 +21,10 @@
 }
 
 .list ul li .content{
-  width: 88%;
   padding-left: 3px;
 }
 
 .list ul li .book{
-  width: 10%;
   padding-right: 5px;
   text-align: right;
   font-style: italic;
