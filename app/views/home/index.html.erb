@@ -9,8 +9,8 @@
         <li>
           <div class='content'><%= quote.content %></div>
           <div class='book'><%= quote.book %></div>
+          <%= social_share_button_tag(quote.content) %>
         </li>
-        <%= social_share_button_tag(quote.content) %>
       <% end %>
     </ul>
   </div>
