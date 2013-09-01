@@ -6,15 +6,15 @@ development:
   encoding: utf8
   database: quotezip
   pool: 5
-  username: root
-  password: root
-  host: localhost
+  username: vagrant
+  password: vagrant
+  host: 127.0.0.1
 
 test:
   adapter: mysql2  
   encoding: utf8
   database: quotezip_test
   pool: 5
-  username: root
-  password: root
-  host: localhost
+  username: vagrant
+  password: vagrant
+  host: 127.0.0.1

@@ -10,6 +10,7 @@
           <div class='content'><%= quote.content %></div>
           <div class='book'><%= quote.book %></div>
         </li>
+        <%= social_share_button_tag(@quotes.content) %>
       <% end %>
     </ul>
   </div>
@@ -25,4 +26,3 @@
   });
   </script>
 <% end %>
-    
