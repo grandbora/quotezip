@@ -1,6 +1,6 @@
 <% content_for :meta do %>
   <meta property="og:title" content="Quote from <%= @quote.book %>"/>
-  <meta property="og:description" content="<%= social_share_button_content(@quote.content) -%>..."/>
+  <meta property="og:description" content="<%= social_share_button_content(@quote.content) -%>"/>
 <% end %>
 <% content_for :body do %>
   <div class="list show">
