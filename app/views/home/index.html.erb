@@ -7,7 +7,7 @@
     <ul>
       <% @quotes.each do |quote| %>
         <li>
-          <a href="/asd">
+          <a href="/<%= quote.id -%>">
             <div class='content'><%= quote.content %></div>
             <div class='book'><%= quote.book %></div>
           </a>
