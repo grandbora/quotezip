@@ -6,6 +6,10 @@ class HomeController < ApplicationController
     @quotes = Quote.all(:order => "updated_at DESC", :limit => 150)
   end
 
+  def show
+    respond_with(Quote.where("id = :id", {:id => params['id']}))
+  end
+
   def save
     quote = Quote.new(params['quote'])
     quote.save
