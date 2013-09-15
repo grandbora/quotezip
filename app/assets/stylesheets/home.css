@@ -13,6 +13,7 @@
   margin-bottom: 5px;
   padding-bottom: 3px;
   border-bottom: 1px #AAAAFF dotted;
+  cursor: pointer;
 }
 
 .list ul li .content, .list ul li .book, .list ul li .social-share-button {
