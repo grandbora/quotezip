@@ -2,9 +2,9 @@
   <div class="list">
     <ul>
         <li>
-          <div class='content'><%= quote.content %></div>
-          <div class='book'><%= quote.book %></div>
-          <%= social_share_button_tag(quote.content) %>
+          <div class='content'><%= @quote.content %></div>
+          <div class='book'><%= @quote.book %></div>
+          <%= social_share_button_tag(@quote.content) %>
         </li>
     </ul>
   </div>
