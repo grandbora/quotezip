@@ -1,7 +1,7 @@
 QuotezipApp::Application.routes.draw do
 
   root :to => "home#index"
-  get ":id" => "home#show"
+  get "/:id" => "home#show"
   get "create" => "home#create"
 
   get "quote" => "home#get_all"
