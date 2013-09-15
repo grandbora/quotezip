@@ -4,6 +4,17 @@
   <title>Quotezip</title>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+
+  <meta property="og:site_name" content="Quotezip"/>
+  <meta property="og:image" content="/og.jpg"/>
+  <% if content_for?(:meta) %>
+	  <%= yield(:meta) %>
+  <% else %>
+    <meta property="og:title" content="Quotezip"/>
+  	<meta property="og:description" content="Library of quotes"/>
+  <% end %>
+
+
 </head>
 <body>
 	<div class="top">
