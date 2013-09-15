@@ -6,7 +6,7 @@
   <%= javascript_include_tag "application" %>
 
   <meta property="og:site_name" content="Quotezip"/>
-  <meta property="og:image" content="/og.jpg"/>
+  <meta property="og:image" content=" <%=request.scheme%>//<%=request.host%>/og.jpg"/>
   <% if content_for?(:meta) %>
 	  <%= yield(:meta) %>
   <% else %>
