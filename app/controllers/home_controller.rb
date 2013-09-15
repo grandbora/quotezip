@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   end
 
   def show
-    respond_with(Quote.where("id = :id", {:id => params['id']}))
+    @quotes = Quote.where("id = :id", {:id => params['id']})
   end
 
   def save
