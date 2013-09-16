@@ -11,7 +11,7 @@ module HomeHelper
 
   def social_share_button_tag(quote)
     content = social_share_description quote.content
-    url = request.protocol + request.host + "/" + quote.id
+    url = request.protocol + request.host + "/" + quote.id.to_s
     super(result, {url: url})
   end
 end
