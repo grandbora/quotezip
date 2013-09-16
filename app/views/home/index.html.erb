@@ -11,7 +11,7 @@
             <div class='content'><%= quote.content %></div>
             <div class='book'><%= quote.book %></div>
           </a>
-          <%= social_share_button_tag(social_share_button_content(quote.content)) -%>
+          <%= social_share_button_tag(quote) -%>
         </li>
       <% end %>
     </ul>
