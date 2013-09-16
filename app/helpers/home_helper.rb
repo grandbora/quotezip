@@ -4,10 +4,10 @@ module HomeHelper
     content = quote.content
     extra_meta = "... #quotezip "
     offsetLength = extra_meta.length + 2 + get_url(quote).length #TODO : 2 is for the space and colon !! make a pr
-    lastCharIndex = 140 - offsetLength - 1
+    maxLength = 140 - offsetLength
 
     result = content + extra_meta
-    result = content[0..lastCharIndex] + extra_meta unless content.length < maxLength
+    result = content[0..maxLength - 1] + extra_meta unless content.length < maxLength
   end
 
   def social_share_button_tag(quote)
