@@ -7,7 +7,10 @@ class HomeController < ApplicationController
   end
 
   def show
-    @quote = Quote.where("id = :id", {:id => params['id']}).first
+    quoteRelation = Quote.where("id = :id", {:id => params['id']})
+    render :status => 404 if quoteRelation.empty?
+
+    @quote = quoteRelation.first
   end
 
   def save

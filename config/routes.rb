@@ -2,7 +2,7 @@ QuotezipApp::Application.routes.draw do
 
   root :to => "home#index"
   get "create" => "home#create"
-  get ":id" => "home#show"
+  get ":id" => "home#show", :constraints => { :id => /[0-9]/ }
 
   get "quote" => "home#get_all"
   get "quote/book" => "home#get_by_book"
