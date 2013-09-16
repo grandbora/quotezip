@@ -7,7 +7,7 @@ module HomeHelper
     maxLength = 140 - offsetLength
 
     result = content + extra_meta
-    result = content[0..maxLength - 1] + extra_meta unless content.length < maxLength
+    result = content[0..(maxLength - 1)] + extra_meta unless content.length < maxLength
   end
 
   def social_share_button_tag(quote)
