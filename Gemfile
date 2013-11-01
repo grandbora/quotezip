@@ -4,6 +4,8 @@ gem 'thin'
 gem 'rails', '3.2.9'
 gem 'mysql2'
 gem 'social-share-button'
+gem 'rest-client'
+gem 'json'
 
 group :production do
 end

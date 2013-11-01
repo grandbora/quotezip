@@ -136,9 +136,11 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails
   foreman
+  json
   mysql2
   nokogiri
   rails (= 3.2.9)
+  rest-client
   rspec
   sass-rails
   social-share-button
