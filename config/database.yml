@@ -18,3 +18,7 @@ test:
   username: vagrant
   password: vagrant
   host: 127.0.0.1
+
+
+# CREATE USER 'vagrant'@'localhost' IDENTIFIED BY 'vagrant';
+# GRANT ALL PRIVILEGES ON *.* TO 'vagrant'@'localhost';
