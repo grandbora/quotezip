@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>QuoteApp</title>
-  <%= stylesheet_link_tag    "application", media: "all" %>
+  <title>Quotezip</title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <meta property="og:site_name" content="Quotezip"/>
+  <meta property="og:url" content="<%=request.original_url -%>"/>
+  <meta property="og:image" content="<%=request.protocol+request.host -%>/og.jpg"/>
+  <% if content_for?(:meta) %>
+	  <%= yield(:meta) %>
+  <% else %>
+    <meta property="og:title" content="Quotezip"/>
+  	<meta property="og:description" content="Library of quotes"/>
+  <% end %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div class="top">
+		<div class="logo left">
+			<%= link_to 'quotezip', :controller => 'feed', :action => 'index' %></li>
+		</div>
+	</div>
+	<div class="middle">
+		<div class="content"><%= yield :body %></div>
+	</div>
+	<div class="bottom">
+		<%= yield :footer %>
+	</div>
 </body>
 </html>
