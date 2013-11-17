@@ -1,0 +1,17 @@
+<% content_for :body do %>
+  <div class="list">
+    <div class="listTitle">
+      Recent Quotes
+    </div>
+    <ul>
+      <% @quotes.each do |quote| %>
+        <li>
+          <a href="/<%= quote.id -%>">
+            <div class='content'><%= quote.content %></div>
+            <div class='book'><%= quote.book %></div>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
