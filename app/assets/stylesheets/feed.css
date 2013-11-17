@@ -1,4 +1,35 @@
-/*
-  Place all the styles related to the matching controller here.
-  They will automatically be included in application.css.
-*/
+.list .listTitle {
+  font-size: 25px;
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.list ul li {
+  width: 100%;
+  margin-bottom: 5px;
+  padding-bottom: 3px;
+  border-bottom: 1px #AAAAFF dotted;
+  cursor: pointer;
+}
+
+.list ul li a{
+  color: black
+}
+
+.list ul li .content, .list ul li .book, .list ul li .social-share-button {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.list ul li .content{
+  padding-left: 3px;
+}
+
+.list ul li .book{
+  padding-right: 5px;
+  text-align: right;
+  font-style: italic;
+  color: #A0A0C0;
+  font-size: 16px;
+}
