@@ -10,23 +10,23 @@
   <meta property="og:url" content="<%=request.original_url -%>"/>
   <meta property="og:image" content="<%=request.protocol+request.host -%>/og.jpg"/>
   <% if content_for?(:meta) %>
-	  <%= yield(:meta) %>
+    <%= yield(:meta) %>
   <% else %>
     <meta property="og:title" content="Quotezip"/>
-  	<meta property="og:description" content="Library of quotes"/>
+    <meta property="og:description" content="Library of quotes"/>
   <% end %>
 </head>
 <body>
-	<div class="top">
-		<div class="logo left">
-			<%= link_to 'quotezip', :controller => 'feed', :action => 'index' %></li>
-		</div>
-	</div>
-	<div class="middle">
-		<div class="content"><%= yield :body %></div>
-	</div>
-	<div class="bottom">
-		<%= yield :footer %>
-	</div>
+  <div class="top">
+    <%= render "partial/top_menu" %>
+  </div>
+
+  <div class="middle">
+    <div class="content"><%= yield :body %></div>
+  </div>
+
+  <div class="bottom">
+    <%= yield :footer %>
+  </div>
 </body>
 </html>

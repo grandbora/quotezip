@@ -1,0 +1,13 @@
+<div class="logo left">
+  <%= link_to 'quotezip', :controller => 'feed', :action => 'index' %></li>
+</div>
+
+<% if user_signed_in? %>
+  <div class="profile right">
+    <%= current_user.user_name %>
+  </div>
+<% else %>
+  <div class="login right">
+    <%= link_to 'login', user_omniauth_authorize_path(:twitter) %>
+  </div>
+<% end %>
