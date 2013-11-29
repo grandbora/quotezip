@@ -6,6 +6,6 @@ class Quote < ActiveRecord::Base
     select('quotes.*, count(votes.id) as votes_count').
     joins('left join votes on quotes.id = votes.quote_id').
     group('quotes.id').
-    order('votes_count DESC, updated_at DESC')
+    order('votes_count DESC, quotes.updated_at DESC')
 
 end
