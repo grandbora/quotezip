@@ -6,10 +6,22 @@
     <ul>
       <% @quotes.each do |quote| %>
         <li>
-          <a href="/<%= quote.id -%>">
-            <div class='content'><%= quote.content %></div>
-            <div class='book'><%= quote.book %></div>
-          </a>
+          <div>
+            <a href="/<%= quote.id -%>">
+              <div class='content'><%= quote.content %></div>
+              <div class='book'><%= quote.book %></div>
+              <div class='bottom_menu'>
+                <% if quote.user.include? current_user %>
+                  <div class='favorited'>favorited</div>
+                <% else %>
+                  <%= form_for :vote, url: votes_path, html: {class: "favorite_button"} do |f| %>
+                    <%= f.hidden_field :quote_id, :value => quote.id %>
+                    <%= f.submit "favorite" %>
+                  <% end %>
+                <% end %>
+              </div>
+            </a>
+          </div>
         </li>
       <% end %>
     </ul>
