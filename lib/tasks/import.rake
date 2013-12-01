@@ -14,7 +14,7 @@ namespace :import do
       :host => "api.readmill.com",
       :path => "/v2/highlights",
       :query => {
-        "client_id" => "3f7cce970dd0725710e2519c4006bcac",
+        "client_id" => ENV["READMILL_APP_ID"],
         "order" => "highlighted_at",
         "from" => lastTimestamp
       }.to_query
@@ -31,7 +31,10 @@ namespace :import do
 
     items.each_with_index { |quote, i|
      content = quote["highlight"]["content"]
-     quoteRecord = Quote.new({"content" => content, "book" =>""})
+     readingId = quote["highlight"]["reading"]["id"]
+     book = getBook(readingId)
+
+     quoteRecord = Quote.new({"content" => content, "book" =>book["title"]})
      quoteRecord.save
      puts "Item #{i} saved"
 
@@ -47,5 +50,22 @@ namespace :import do
 
   def getLastTimestamp
     ReadMillImport.last!.last_import
+  end
+
+  def getBook(readingId)
+    requestUrlHash = {
+      :host => "api.readmill.com",
+      :path => "/v2/readings/" + readingId.to_s,
+      :query => {
+        "client_id" => ENV["READMILL_APP_ID"]
+      }.to_query
+    }    
+
+    requestUrl = URI::HTTPS.build(requestUrlHash)
+    puts "Reading request url : " + requestUrl.to_s
+
+    jsonRes =  RestClient.get requestUrl.to_s
+    res = JSON.parse(jsonRes)
+    book = res["reading"]["book"]
   end
 end
