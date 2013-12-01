@@ -19,5 +19,4 @@ after_fork do |server, worker|
 
   defined?(ActiveRecord::Base) and
     ActiveRecord::Base.establish_connection
-    ActiveRecord::Base.connection.clear_query_cache
 end
