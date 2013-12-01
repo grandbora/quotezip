@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129105839) do
+ActiveRecord::Schema.define(version: 20131201152409) do
 
   create_table "quotes", force: true do |t|
     t.text     "content"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 20131129105839) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "reports", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "quote_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reports", ["quote_id"], name: "index_reports_on_quote_id", using: :btree
+  add_index "reports", ["user_id"], name: "index_reports_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.integer  "uid"
