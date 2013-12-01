@@ -11,11 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131201152409) do
+ActiveRecord::Schema.define(version: 20131201155822) do
 
   create_table "quotes", force: true do |t|
     t.text     "content"
     t.string   "book"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "read_mill_imports", force: true do |t|
+    t.string   "last_import"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

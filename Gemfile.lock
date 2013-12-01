@@ -84,6 +84,8 @@ GEM
       thor (>= 0.18.1, < 2.0)
     raindrops (0.12.0)
     rake (10.1.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     sprockets (2.10.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -121,5 +123,6 @@ DEPENDENCIES
   omniauth-twitter
   rails (= 4.0.1)
   rails_12factor
+  rest-client
   uglifier
   unicorn

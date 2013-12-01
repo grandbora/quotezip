@@ -7,3 +7,5 @@ Quote.create( :content => 'Of all creatures that breathe and move upon the earth
 Quote.create( :content => 'Control leads to compliance; autonomy leads to engagement.', :book => 'Drive: The Surprising Truth About What Motivates Us' )
 Quote.create( :content => "Money alone isn't enough to bring happiness . . . happiness [is] when you're actually truly ok with losing everything you have.", :book => "Delivering Happiness: A Path to Profits, Passion, and Purpose" )
 Quote.create( :content => "I had decided to stop chasing the money, and start chasing the passion.", :book => "Delivering Happiness: A Path to Profits, Passion, and Purpose" )
+
+ReadMillImport.create( :last_import => "2013-11-01T15:30:27Z" )
