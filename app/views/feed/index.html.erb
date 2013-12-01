@@ -8,25 +8,7 @@
         <li>
           <div>
             <a href="/<%= quote.id -%>">
-              <div class='content'><%= quote.content %></div>
-              <div class='book'><%= quote.book %></div>
-              <div class='bottom_menu'>
-                
-                <% if quote.user.include? current_user %>
-                  <div class='favorited'>favorited</div>
-                <% else %>
-                  <%= form_for :vote, url: votes_path, html: {class: "favorite_button"} do |f| %>
-                    <%= f.hidden_field :quote_id, :value => quote.id %>
-                    <%= f.submit "favorite" %>
-                  <% end %>
-                <% end %>
-
-                <%= form_for :report, url: reports_path, html: {class: "report_button"} do |f| %>
-                  <%= f.hidden_field :quote_id, :value => quote.id %>
-                  <%= f.submit "report" %>
-                <% end %>
-
-              </div>
+              <%= render partial: "partial/single_quote", locals: {quote: quote} %>
             </a>
           </div>
         </li>
